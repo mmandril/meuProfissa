@@ -10,11 +10,13 @@
     	
     	//Themes
     	$mdThemingProvider.theme('default')
-        .primaryPalette('blue')
-        .accentPalette('cyan');
+        .primaryPalette('teal')
+        .accentPalette('brown');
     	
     	localStorageServiceProvider
-        .setPrefix('pto');
+        .setPrefix('meuProfissa')
+        .setStorageType('sessionStorage')
+        .setNotify(true, true);
     	
     	
     	//Routes
@@ -33,8 +35,7 @@
         	url: '/enter',
         	templateUrl: 'view/core/enter.html',
         	controller: 'LoginCtrl'
-        });
-    	
+        });    	
     	$urlRouterProvider.otherwise('/');
     	
     	
