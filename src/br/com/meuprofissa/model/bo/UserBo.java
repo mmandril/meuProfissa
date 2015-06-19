@@ -1,5 +1,7 @@
 package br.com.meuprofissa.model.bo;
 
+import java.util.Date;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
@@ -28,6 +30,8 @@ public class UserBo {
 			Profile profile = new Profile();
 			profile.setId(2);
 			user.setProfile(profile);
+			user.setCreated(new Date());
+			user.setInactived(new Date());
 			
 			userDao.merge(user);
 		}catch(DaoException e) {
