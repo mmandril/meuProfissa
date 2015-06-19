@@ -35,6 +35,8 @@
         	controller: 'LoginCtrl'
         });
     	
+    	$urlRouterProvider.otherwise('/');
+    	
     	
     	//Translate
     	$translateProvider.translations('pt-BR', {

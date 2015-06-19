@@ -2,6 +2,8 @@ package br.com.meuprofissa.model.entity;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="user")
@@ -35,6 +39,18 @@ public class User {
 	
 	@Column(name="login_token")
 	private String loginToken;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "created", nullable = false, length = 19)
+	private Date created;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "altered", nullable = true, length = 19)
+	private Date altered;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "inactived", nullable = true, length = 19)
+	private Date inactived;
 	
 	public Integer getId() {
 		return id;
@@ -82,5 +98,29 @@ public class User {
 
 	public void setLoginToken(String loginToken) {
 		this.loginToken = loginToken;
+	}
+
+	public Date getCreated() {
+		return created;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
+	}
+
+	public Date getAltered() {
+		return altered;
+	}
+
+	public void setAltered(Date altered) {
+		this.altered = altered;
+	}
+
+	public Date getInactived() {
+		return inactived;
+	}
+
+	public void setInactived(Date inactived) {
+		this.inactived = inactived;
 	}
 }
