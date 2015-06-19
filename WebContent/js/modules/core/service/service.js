@@ -6,7 +6,7 @@
 
   function CoreService ($http) {
 	  this.signup = function(user) {
-		return $http.post('http://localhost:9090/PTO/api/user/signup', user);  
+		return $http.post('http://localhost:9090/MeuProfissa/api/user/signup', user);  
 	  };
   };    
 

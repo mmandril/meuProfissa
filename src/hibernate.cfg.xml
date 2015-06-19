@@ -8,7 +8,7 @@
 	<session-factory name="hibernate">
 
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/pto</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/meuprofissa</property>
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password">root</property>
@@ -27,12 +27,12 @@
 		<property name="c3p0.timeout">1800</property> <!-- seconds --> 
 		
 		
-		<mapping class="br.com.pto.model.entity.Category"/>
-		<mapping class="br.com.pto.model.entity.Partner"/>
-		<mapping class="br.com.pto.model.entity.PartnerType"/>
-		<mapping class="br.com.pto.model.entity.Profile"/>
-		<mapping class="br.com.pto.model.entity.SubCategory"/>
-		<mapping class="br.com.pto.model.entity.User"/>
+		<mapping class="br.com.meuprofissa.model.entity.Category"/>
+		<mapping class="br.com.meuprofissa.model.entity.Partner"/>
+		<mapping class="br.com.meuprofissa.model.entity.PartnerType"/>
+		<mapping class="br.com.meuprofissa.model.entity.Profile"/>
+		<mapping class="br.com.meuprofissa.model.entity.SubCategory"/>
+		<mapping class="br.com.meuprofissa.model.entity.User"/>
 
 	</session-factory>
 </hibernate-configuration>	

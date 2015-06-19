@@ -7,7 +7,7 @@
 
   function CoreCtrl ($scope, $translate) {
 	  $scope.pageClass = 'animated fadeIn';
-	  $scope.title = 'PTO!';
+	  $scope.title = 'MeuProfissa!';
 	  
 	  
 	  

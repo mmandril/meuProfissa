@@ -4,5 +4,5 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation=" http://www.jboss.com/xml/ns/javaee 
 	http://www.jboss.org/j2ee/schema/jboss-web_5_1.xsd">
-	<context-root>/PTO</context-root>
+	<context-root>/MeuProfissa</context-root>
 </jboss-web>
