@@ -30,6 +30,12 @@ public class User {
 	@Column(name="password", nullable = false)
 	private String password;
 
+	@Column(name="signup_token")
+	private String signupToken;
+	
+	@Column(name="login_token")
+	private String loginToken;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -60,5 +66,21 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getSignupToken() {
+		return signupToken;
+	}
+
+	public void setSignupToken(String signupToken) {
+		this.signupToken = signupToken;
+	}
+
+	public String getLoginToken() {
+		return loginToken;
+	}
+
+	public void setLoginToken(String loginToken) {
+		this.loginToken = loginToken;
 	}
 }
