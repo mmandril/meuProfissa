@@ -5,17 +5,17 @@
 		 	<md-card-content>
 	   			<h2>{{'login' | translate}}</h2>
 			   	<p>{{'temCadastro' | translate}}</p>
-			   	<form>
+			   	<form data-ng-submit="login()">
 		   			<md-input-container flex>
           				<label>Login</label>
-       					<input data-ng-model="usuario.login" type="text">
+       					<input data-ng-model="user.login" type="text" required>
         			</md-input-container>
         			<md-input-container flex>
           				<label>Senha</label>
-       					<input data-ng-model="usuario.senha" type="password">
+       					<input data-ng-model="user.password" type="password" required>
         			</md-input-container>
         			<div class="md-actions" layout="row" layout-align="end center">
-				   		<md-button class="md-raised md-primary">{{'btnLogin' | translate}} <i class="material-icons">send</i></md-button>
+				   		<md-button class="md-raised md-primary">{{'btnLogin' | translate}} <ng-md-icon icon="send" style="fill:white"></ng-md-icon></md-button>
 			 		</div>
 			   	</form>
 		 	</md-card-content>
@@ -29,14 +29,14 @@
 				   	<p>{{'nTemCadastro' | translate}}</p>
 		   			<md-input-container flex>
           				<label>Login</label>
-       					<input data-ng-model="user.login" type="text">
+       					<input data-ng-model="user.login" type="text" required>
         			</md-input-container>
         			<md-input-container flex>
           				<label>Senha</label>
-       					<input data-ng-model="user.password" type="password">
+       					<input data-ng-model="user.password" type="password" required>
         			</md-input-container>
         			<div class="md-actions" layout="row" layout-align="end center">
-				   		<md-button class="md-raised md-accent">{{'btnCadastrar' | translate}} <i class="material-icons">save</i></md-button>
+				   		<md-button class="md-raised md-accent">{{'btnCadastrar' | translate}} <ng-md-icon icon="save" style="fill:white"></ng-md-icon></md-button>
 			 		</div>
 			 	</form>
 		 	</md-card-content>

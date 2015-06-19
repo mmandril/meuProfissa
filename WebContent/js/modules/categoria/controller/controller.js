@@ -4,7 +4,9 @@
   angular.module('CategoryModule').controller('CategoryCtrl', CategoryCtrl);
 
 
-  function CategoryCtrl ($scope, $filter, CategoriaService) {
+  function CategoryCtrl ($scope, $filter, CategoriaService, localStorageService) {
+	  
+	  console.log(localStorageService.get('token'))
 	  
 	  $scope.showProgress = true;
 	  
@@ -22,5 +24,5 @@
 	  
   };    
 
-  CategoryCtrl.$inject = ['$scope', '$filter', 'CategoryService']; 
+  CategoryCtrl.$inject = ['$scope', '$filter', 'CategoryService', 'localStorageService']; 
 })();

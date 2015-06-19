@@ -14,6 +14,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="user")
@@ -37,7 +38,7 @@ public class User {
 	@Column(name="signup_token")
 	private String signupToken;
 	
-	@Column(name="login_token")
+	@Transient
 	private String loginToken;
 	
 	@Temporal(TemporalType.TIMESTAMP)

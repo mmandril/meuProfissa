@@ -62,6 +62,21 @@ public class GenericDaoImpl<T> implements GenericDao<T>{
 	public T getById(Integer id) throws DaoException {
 		return (T) session.get(type, id);
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public T findOne(List<Criterion> criterions) throws DaoException {
+		Criteria crit = session.createCriteria(type);
+
+		if(criterions != null) {
+			for(Criterion criterion : criterions) {
+				crit.add(criterion);
+			}
+		}
+
+
+		return (T) crit.uniqueResult();
+	}
 
 	@Override
 	public void delete(T entity) throws DaoException {

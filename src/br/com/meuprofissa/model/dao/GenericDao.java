@@ -14,6 +14,8 @@ public interface GenericDao <T> {
 	public List<T> listAll(List<Criterion> criterions, List<Order> orders) throws DaoException;
 	
 	public T getById(Integer id) throws DaoException;
+	
+	public T findOne(List<Criterion> criterions) throws DaoException;
 
 	public void delete(T entity) throws DaoException;
 	

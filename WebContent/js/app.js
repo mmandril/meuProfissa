@@ -3,7 +3,7 @@
 	angular.module('CategoryModule', []);
 	
 
-    var app = angular.module('pto', ['CoreModule', 'CategoryModule', 'ui.router', 'ngMaterial', 'LocalStorageModule', 'pascalprecht.translate']);
+    var app = angular.module('pto', ['CoreModule', 'CategoryModule', 'ui.router', 'ngMaterial', 'LocalStorageModule', 'pascalprecht.translate', 'ngMdIcons']);
     
     
     app.config(function($stateProvider, $urlRouterProvider, localStorageServiceProvider, $mdThemingProvider, $translateProvider){
@@ -19,9 +19,11 @@
         .setNotify(true, true);
     	
     	
-    	//Routes
+    	
+    	$urlRouterProvider.otherwise('/');
+    	//Routes Liberado
     	$stateProvider
-    	.state('home', {
+    	.state('app', {
     		url: '/',
             templateUrl: 'view/core/index.html',
             controller: 'CoreCtrl'
@@ -35,8 +37,15 @@
         	url: '/enter',
         	templateUrl: 'view/core/enter.html',
         	controller: 'LoginCtrl'
-        });    	
-    	$urlRouterProvider.otherwise('/');
+        })
+        
+        //Routes Admin
+        .state('admin', {
+        	url: '/admin',
+        	templateUrl: 'view/admin/index.html',
+        	controller: 'AdminCtrl'
+        });
+    	
     	
     	
     	//Translate

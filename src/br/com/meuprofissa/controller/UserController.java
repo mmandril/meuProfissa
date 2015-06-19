@@ -35,4 +35,15 @@ public class UserController {
 			result.use(Results.status()).badRequest(e.getLocalizedMessage());
 		}
 	}
+	
+	@Consumes(value = "application/json")
+	@Post(value="login")
+	public void login(User user) {
+		try {
+			String token = userBo.login(user);
+			result.use(Results.json()).withoutRoot().from(token).serialize();;
+		}catch(Exception e) {
+			result.use(Results.status()).badRequest(e.getLocalizedMessage());
+		}
+	}
 }
