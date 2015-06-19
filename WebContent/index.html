@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html data-ng-app="pto" data-ng-controller="CoreCtrl">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	    <title>{{title}}</title>
+	    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    	<link rel="stylesheet" href="components/angular-material/angular-material.css">
+    	<link rel="stylesheet" href="css/animate.css">
+    	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	</head>
+	<body>
+		<a data-ng-click="changeTranslate('pt-BR')">BR</a> <a data-ng-click="changeTranslate('en')">US</a>
+    	<menu></menu>
+    	<md-content>
+		    <div data-ui-view class="{{pageClass}}">
+		    </div>
+		</md-content>
+	
+		<script type="application/javascript" src="components/angular/angular.js"></script>
+		<script type="application/javascript" src="components/angular-ui-router/release/angular-ui-router.js"></script>
+		<script type="application/javascript" src="components/angular/angular.js"></script>
+   	 	<script type="application/javascript" src="components/angular-aria/angular-aria.js"></script>
+    	<script type="application/javascript" src="components/angular-animate/angular-animate.js"></script>
+    	<script type="application/javascript" src="components/angular-material/angular-material.js"></script>
+    	<script type="application/javascript" src="components/angular-local-storage/dist/angular-local-storage.js"></script>
+    	<script type="application/javascript" src="components/angular-translate/angular-translate.js"></script>
+		
+		<script type="application/javascript" src="js/app.js"></script>
+		<script type="application/javascript" src="js/modules/core/controller/controller.js"></script>
+		<script type="application/javascript" src="js/modules/core/directive/directive.js"></script>
+		<script type="application/javascript" src="js/modules/core/service/service.js"></script>
+		<script type="application/javascript" src="js/modules/categoria/controller/controller.js"></script>
+		<script type="application/javascript" src="js/modules/categoria/service/service.js"></script>
+		
+	</body>
+</html>

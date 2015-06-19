@@ -1,0 +1,45 @@
+<md-progress-linear md-mode="indeterminate" data-ng-show="showProgress"></md-progress-linear>
+<div layout="row" layout-align="center center">
+	<div>
+	  	<md-card>
+		 	<md-card-content>
+	   			<h2>{{'login' | translate}}</h2>
+			   	<p>{{'temCadastro' | translate}}</p>
+			   	<form>
+		   			<md-input-container flex>
+          				<label>Login</label>
+       					<input data-ng-model="usuario.login" type="text">
+        			</md-input-container>
+        			<md-input-container flex>
+          				<label>Senha</label>
+       					<input data-ng-model="usuario.senha" type="password">
+        			</md-input-container>
+        			<div class="md-actions" layout="row" layout-align="end center">
+				   		<md-button class="md-raised md-primary">{{'btnLogin' | translate}} <i class="material-icons">send</i></md-button>
+			 		</div>
+			   	</form>
+		 	</md-card-content>
+		</md-card>
+  	</div>
+  	<div>
+  		<md-card>
+		 	<md-card-content>
+		 		<form data-ng-submit="signup()">
+		   			<h2>{{'cadastro' | translate}}</h2>
+				   	<p>{{'nTemCadastro' | translate}}</p>
+		   			<md-input-container flex>
+          				<label>Login</label>
+       					<input data-ng-model="user.login" type="text">
+        			</md-input-container>
+        			<md-input-container flex>
+          				<label>Senha</label>
+       					<input data-ng-model="user.password" type="password">
+        			</md-input-container>
+        			<div class="md-actions" layout="row" layout-align="end center">
+				   		<md-button class="md-raised md-primary">{{'btnCadastrar' | translate}} <i class="material-icons">save</i></md-button>
+			 		</div>
+			 	</form>
+		 	</md-card-content>
+		</md-card>
+  	</div>
+</div>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-name="categoria"/>
+  <table-filter match-name="cidade"/>
+  <table-filter match-name="comentario"/>
+  <table-filter match-name="convite"/>
+  <table-filter match-name="estabelecimento"/>
+  <table-filter match-name="estado"/>
+  <table-filter match-name="imagem"/>
+  <table-filter match-name="pais"/>
+  <table-filter match-name="perfil"/>
+  <table-filter match-name="rating"/>
+  <table-filter match-name="tipo"/>
+  <table-filter match-name="usuario"/>
+</hibernate-reverse-engineering>

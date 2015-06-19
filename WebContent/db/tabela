@@ -1,0 +1,51 @@
+Tabelas
+*******************
+
+Categoria (Ex: Obra)
+id
+name
+created
+updated
+inactivated
+
+SubCategoria (Ex: Pintor)
+id
+name
+categoria_id
+created
+updated
+inactivated
+
+Parceiro( Ex: Fulano de Tal, Empresa Tal)
+id
+"Informações adicionais"
+
+SubCategoriaParceiro
+id
+parceiro_id
+subcategoria_id
+
+
+Perfil
+id
+name
+
+Usuario
+id
+perfil_id
+"Informacoes Usuario"
+
+Avaliacao
+id
+usuario_id
+parceiro_id
+star
+comment
+created
+
+Reclamacao
+id
+usuario_id
+parceiro_id
+comment
+created
