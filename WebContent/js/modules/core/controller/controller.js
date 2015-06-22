@@ -46,10 +46,20 @@
 	  
 	  $scope.login = function() {
 		  $scope.showProgress = true;
-		  CoreService.login($scope.user)
+		  CoreService.login($scope.userLogin)
 		  .success(function(token) {
 			  console.log(token);
 			  localStorageService.set('token', token);
+			  
+			  CoreService.getMenu(token)
+			  .success(function(menu){
+				 localStorageService.set('menu', menu);
+				 console.log(menu);
+				 $scope.menu = menu;
+			  })
+			  .error(function(err){
+				  //tratar erro
+			  });
 		  })
 		  .error(function(err){
 			  displayToast('.error', 'Ocorreu um erro!');

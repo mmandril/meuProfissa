@@ -16,6 +16,7 @@ import br.com.meuprofissa.model.entity.User;
 import br.com.meuprofissa.model.exception.DaoException;
 import br.com.meuprofissa.model.exception.ServiceException;
 import br.com.meuprofissa.util.CryptPassword;
+import br.com.meuprofissa.util.InitializeAndUnproxy;
 import br.com.meuprofissa.util.SessionVariables;
 import br.com.meuprofissa.util.TokenGenerator;
 import br.com.meuprofissa.util.Transactional;
@@ -58,6 +59,7 @@ public class UserBo {
 			if(user != null) {
 				String loginToken = TokenGenerator.generate();
 				user.setLoginToken(loginToken);
+				user.setProfile(InitializeAndUnproxy.initializeAndUnproxy(user.getProfile()));
 				sessionVariables.setUser(user);
 				
 				return loginToken;

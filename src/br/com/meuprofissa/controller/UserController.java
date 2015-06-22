@@ -4,12 +4,15 @@ import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Consumes;
 import br.com.caelum.vraptor.Controller;
+import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.view.Results;
 import br.com.meuprofissa.model.bo.UserBo;
 import br.com.meuprofissa.model.entity.User;
+import br.com.meuprofissa.util.MenuUtil;
+import br.com.meuprofissa.util.SessionVariables;
 
 @Controller
 @Path(value={"api/user"})
@@ -20,6 +23,9 @@ public class UserController {
 	
 	@Inject
 	private UserBo userBo;
+	
+	@Inject
+	private SessionVariables sessionVariables;
 	
 	public UserController() {
 		
@@ -32,7 +38,7 @@ public class UserController {
 			userBo.signup(user);
 			result.use(Results.status()).ok();
 		}catch(Exception e) {
-			result.use(Results.status()).badRequest(e.getLocalizedMessage());
+			result.use(Results.status()).badRequest(e.getMessage());
 		}
 	}
 	
@@ -41,9 +47,19 @@ public class UserController {
 	public void login(User user) {
 		try {
 			String token = userBo.login(user);
-			result.use(Results.json()).withoutRoot().from(token).serialize();;
+			result.use(Results.json()).withoutRoot().from(token).serialize();
 		}catch(Exception e) {
-			result.use(Results.status()).badRequest(e.getLocalizedMessage());
+			result.use(Results.status()).badRequest(e.getMessage());
+		}
+	}
+	
+	@Consumes(value = "application/json")
+	@Get(value="getMenu/{token}")
+	public void getMenu(String token) {
+		try {
+			result.use(Results.json()).withoutRoot().from(MenuUtil.getMenu(token, sessionVariables.getUser())).serialize();
+		}catch(Exception e) {
+			result.use(Results.status()).badRequest(e.getMessage());
 		}
 	}
 }

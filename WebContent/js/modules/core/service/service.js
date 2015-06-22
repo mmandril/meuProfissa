@@ -10,8 +10,11 @@
 	  };
 	  
 	  this.login = function(user) {
-		  console.log(user);
 		  return $http.post('http://localhost:9090/MeuProfissa/api/user/login', user);
+	  };
+	  
+	  this.getMenu = function(token) {
+		  return $http.get('http://localhost:9090/MeuProfissa/api/user/getMenu/'+ token);
 	  };
   };    
 

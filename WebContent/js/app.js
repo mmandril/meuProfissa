@@ -72,5 +72,6 @@
     	});
     	 
     	$translateProvider.preferredLanguage('pt-BR');
+    	$translateProvider.useSanitizeValueStrategy('escaped');
     });
 })();
