@@ -46,8 +46,8 @@ public class UserController {
 	@Post(value="login")
 	public void login(User user) {
 		try {
-			String token = userBo.login(user);
-			result.use(Results.json()).withoutRoot().from(token).serialize();
+			user = userBo.login(user);
+			result.use(Results.json()).withoutRoot().from(user).include("profile").exclude("password").serialize();
 		}catch(Exception e) {
 			result.use(Results.status()).badRequest(e.getMessage());
 		}

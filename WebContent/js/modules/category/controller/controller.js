@@ -14,7 +14,6 @@
 	  CategoriaService.get()
 	  .success(function(data){
 		  $scope.categorys = data;
-		  $scope.pageClass = 'animated fadeIn';
 		  $scope.showProgress = false;
 	  })
 	  .error(function(err){

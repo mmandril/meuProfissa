@@ -50,7 +50,7 @@ public class UserBo {
 		}
 	}
 
-	public String login(User user) throws ServiceException {
+	public User login(User user) throws ServiceException {
 		try {
 			user.setPassword(CryptPassword.crypt(user.getPassword()));
 			List<Criterion> criterions = Arrays.asList(new Criterion[]{Restrictions.eq("login", user.getLogin()), Restrictions.eq("password", user.getPassword())});
@@ -62,7 +62,7 @@ public class UserBo {
 				user.setProfile(InitializeAndUnproxy.initializeAndUnproxy(user.getProfile()));
 				sessionVariables.setUser(user);
 				
-				return loginToken;
+				return user;
 			}
 			
 			throw new ServiceException("usuario_invalido");

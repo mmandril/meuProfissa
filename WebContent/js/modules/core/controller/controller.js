@@ -5,7 +5,6 @@
   
 
   function CoreCtrl ($scope, $translate, CoreService, $mdToast, $animate, localStorageService, $state, $rootScope) {
-	  $scope.pageClass = 'animated fadeIn';
 	  $scope.title = 'MeuProfissa!';
 	  
 	  $scope.changeTranslate = function(language) {
@@ -20,7 +19,6 @@
 		  });
 	  };
 	  
-	  $scope.pageClass = 'animated fadeIn';	  
 	  
 	  $scope.signup = function() {
 		  $scope.showProgress = true;
@@ -39,17 +37,20 @@
 	  $scope.login = function() {
 		  $scope.showProgress = true;
 		  CoreService.login($scope.userLogin)
-		  .success(function(token) {
-			  console.log(token);
-			  localStorageService.set('token', token);
+		  .success(function(user) {
+			  localStorageService.set('user', user.loginToken);
 			  
-			  CoreService.getMenu(token)
+			  CoreService.getMenu(user.loginToken)
 			  .success(function(menu){
 				 localStorageService.set('menu', menu);
 				 console.log(menu);
 				 $rootScope.menu = menu;
 				 $scope.showProgress = false;
-				 $state.go('app');
+				 
+				 console.log(user);
+				 if(user.profile.id == 1) {
+					 $state.go('admin');
+				 }
 			  })
 			  .error(function(err){
 				  //tratar erro
