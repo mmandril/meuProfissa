@@ -2,23 +2,15 @@
   'use strict';
 
   angular.module('CoreModule').controller('CoreCtrl', CoreCtrl);
-  angular.module('CoreModule').controller('LoginCtrl', LoginCtrl);
   
 
-  function CoreCtrl ($scope, $translate) {
+  function CoreCtrl ($scope, $translate, CoreService, $mdToast, $animate, localStorageService) {
 	  $scope.pageClass = 'animated fadeIn';
 	  $scope.title = 'MeuProfissa!';
-	  
-	  
-	  
 	  
 	  $scope.changeTranslate = function(language) {
 		  $translate.use(language);
 	  };
-  }
-  
-  
-  function LoginCtrl ($scope, CoreService, $mdToast, $animate, localStorageService) {
 	  
 	  var displayToast = function(type, msg) {
 		  $mdToast.show({
@@ -56,6 +48,7 @@
 				 localStorageService.set('menu', menu);
 				 console.log(menu);
 				 $scope.menu = menu;
+				 $scope.showProgress = false;
 			  })
 			  .error(function(err){
 				  //tratar erro
@@ -67,7 +60,6 @@
 		  });
 	  };	  
   }
-
-  CoreCtrl.$inject = ['$scope', '$translate'];
-  LoginCtrl.$inject = ['$scope', 'CoreService', '$mdToast', '$animate', 'localStorageService']; 
+  
+  CoreCtrl.$inject = ['$scope', '$translate', 'CoreService', '$mdToast', '$animate', 'localStorageService'];
 })();

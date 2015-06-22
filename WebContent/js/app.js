@@ -5,6 +5,9 @@
 
     var app = angular.module('pto', ['CoreModule', 'CategoryModule', 'ui.router', 'ngMaterial', 'LocalStorageModule', 'pascalprecht.translate', 'ngMdIcons']);
     
+    app.run(function($rootScope, localStorageService){
+    	$rootScope.menu = localStorageService.get('menu');
+    });
     
     app.config(function($stateProvider, $urlRouterProvider, localStorageServiceProvider, $mdThemingProvider, $translateProvider){
     	
@@ -17,8 +20,6 @@
         .setPrefix('meuProfissa')
         .setStorageType('sessionStorage')
         .setNotify(true, true);
-    	
-    	
     	
     	$urlRouterProvider.otherwise('/');
     	//Routes Liberado
@@ -36,7 +37,7 @@
         .state('enter', {
         	url: '/enter',
         	templateUrl: 'view/core/enter.html',
-        	controller: 'LoginCtrl'
+        	controller: 'CoreCtrl'
         })
         
         //Routes Admin
@@ -53,6 +54,8 @@
     		'btnLogin': 'Entrar',
     		'btnCadastrar': 'Cadastrar',
     		'homeMenu': 'Início',
+    		'categoryMenu': 'Categoria',
+    		'partnerMenu': 'Parceiro',
     		'categoriaMenu': 'Categoria',
     		'login': 'Entrar',
     		'cadastro': 'Cadastro',
@@ -60,17 +63,6 @@
     		'nTemCadastro': 'Não possuo um conta!'
     	});
     	
-    	$translateProvider.translations('en', {
-    		'btnLogin': 'Enter',
-    		'btnCadastrar': 'Signup',
-    		'homeMenu': 'Home',
-    		'categoriaMenu': 'Category',
-    		'login': 'Login',
-    		'cadastro': 'SignUp',
-    		'temCadastro': 'I alredy have an account!',
-    		'nTemCadastro': "I don't have an account!"
-    	});
-    	 
     	$translateProvider.preferredLanguage('pt-BR');
     	$translateProvider.useSanitizeValueStrategy('escaped');
     });
