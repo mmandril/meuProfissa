@@ -4,7 +4,7 @@
   angular.module('CoreModule').controller('CoreCtrl', CoreCtrl);
   
 
-  function CoreCtrl ($scope, $translate, CoreService, $mdToast, $animate, localStorageService) {
+  function CoreCtrl ($scope, $translate, CoreService, $mdToast, $animate, localStorageService, $state, $rootScope) {
 	  $scope.pageClass = 'animated fadeIn';
 	  $scope.title = 'MeuProfissa!';
 	  
@@ -47,8 +47,9 @@
 			  .success(function(menu){
 				 localStorageService.set('menu', menu);
 				 console.log(menu);
-				 $scope.menu = menu;
+				 $rootScope.menu = menu;
 				 $scope.showProgress = false;
+				 $state.go('app');
 			  })
 			  .error(function(err){
 				  //tratar erro
@@ -61,5 +62,5 @@
 	  };	  
   }
   
-  CoreCtrl.$inject = ['$scope', '$translate', 'CoreService', '$mdToast', '$animate', 'localStorageService'];
+  CoreCtrl.$inject = ['$scope', '$translate', 'CoreService', '$mdToast', '$animate', 'localStorageService', '$state', '$rootScope'];
 })();
