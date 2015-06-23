@@ -2,9 +2,10 @@
 	angular.module('CoreModule', []);
 	angular.module('CategoryModule', []);
 	angular.module('AdminModule', []);
+	angular.module('AdminCategoryModule', []);
 	
 
-    var app = angular.module('pto', ['CoreModule', 'CategoryModule', 'AdminModule', 'ui.router', 'ngMaterial', 'LocalStorageModule', 'pascalprecht.translate', 'ngMdIcons', 'highcharts-ng', 'ngAnimate']);
+    var app = angular.module('pto', ['CoreModule', 'CategoryModule', 'AdminModule', 'AdminCategoryModule', 'ui.router', 'ngMaterial', 'LocalStorageModule', 'pascalprecht.translate', 'ngMdIcons', 'highcharts-ng', 'ngAnimate']);
     
     app.run(function($rootScope, localStorageService){
     	$rootScope.menu = localStorageService.get('menu');
@@ -45,7 +46,14 @@
         .state('admin', {
         	url: '/admin',
         	templateUrl: 'view/admin/index.html',
-        	controller: 'AdminCtrl'
+        	controller: 'AdminCtrl',
+        	requireLogin: true
+        })
+        .state('adminCategory', {
+        	url: '/admin/category',
+        	templateUrl: 'view/admin/category/index.html',
+        	controller: 'AdminCategoryCtrl',
+        	requireLogin: true
         });
     	
     	
@@ -54,6 +62,9 @@
     	$translateProvider.translations('pt-BR', {
     		'btnLogin': 'Entrar',
     		'btnCadastrar': 'Cadastrar',
+    		'btnSearch' : 'Buscar',
+    		'btnCancel' : 'Cancelar',
+    		'btnSave' : 'Salvar',
     		'homeMenu': 'Início',
     		'categoryMenu': 'Categoria',
     		'partnerMenu': 'Parceiro',
@@ -61,7 +72,10 @@
     		'login': 'Entrar',
     		'cadastro': 'Cadastro',
     		'temCadastro': 'Já possuo um conta!',
-    		'nTemCadastro': 'Não possuo um conta!'
+    		'nTemCadastro': 'Não possuo um conta!',
+    		'searchForm': 'Formulário de busca',
+    		'name': 'Nome',
+    		'newTitle': 'Nova'
     	});
     	
     	$translateProvider.preferredLanguage('pt-BR');

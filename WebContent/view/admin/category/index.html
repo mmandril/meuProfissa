@@ -1,0 +1,18 @@
+<md-content layout-padding>
+	<div layout="row">
+  		<div flex="60" offset="20">
+  			<h1>{{'categoryMenu' | translate}} <md-button class="md-fab md-mini md-primary" data-ng-click="newCategory()"><ng-md-icon icon="add" style="line-height: 50px;fill: white;"></ng-md-icon></md-button></h1>  
+  			<md-divider></md-divider>
+  			<br/>
+			<form name="projectForm" class="md-whiteframe-z5">
+    			<md-input-container>
+        			<label>{{'name' | translate}}</label>
+        			<input name="name" data-ng-model="category.name">
+      			</md-input-container>
+      			<div layout="row" layout-align="end start">
+				  <md-button class="md-raised md-primary" layout-align="end start">{{'btnSearch' | translate}}</md-button>
+				</div>
+			</form>
+ 		</div>
+	</div>
+</md-content>

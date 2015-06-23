@@ -11,7 +11,7 @@ public class MenuUtil {
 	public static List<Menu> getMenu(String token, User user) throws Exception {
 		if(token != null && token.equalsIgnoreCase(user.getLoginToken())) {
 			if(user.getProfile().getId() == Constants.ADMINISTRATOR) {
-				return Arrays.asList(new Menu("homeMenu", "#/admin/home"), new Menu("categoryMenu", "#/admin/category"), new Menu("partnerMenu", "#/admin/partner"));
+				return Arrays.asList(new Menu("homeMenu", "#/admin"), new Menu("categoryMenu", "#/admin/category"), new Menu("partnerMenu", "#/admin/partner"));
 			}else {
 				if(user.getProfile().getId() == Constants.PARTNER) {
 					return Arrays.asList(new Menu[]{});

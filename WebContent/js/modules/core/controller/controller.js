@@ -4,7 +4,7 @@
   angular.module('CoreModule').controller('CoreCtrl', CoreCtrl);
   
 
-  function CoreCtrl ($scope, $translate, CoreService, $mdToast, $animate, localStorageService, $state, $rootScope) {
+  function CoreCtrl ($scope, $translate, CoreService, $mdToast, $animate, localStorageService, $state, $rootScope, $mdDialog) {
 	  $scope.title = 'MeuProfissa!';
 	  
 	  $scope.changeTranslate = function(language) {
@@ -63,5 +63,5 @@
 	  };	  
   }
   
-  CoreCtrl.$inject = ['$scope', '$translate', 'CoreService', '$mdToast', '$animate', 'localStorageService', '$state', '$rootScope'];
+  CoreCtrl.$inject = ['$scope', '$translate', 'CoreService', '$mdToast', '$animate', 'localStorageService', '$state', '$rootScope', '$mdDialog'];
 })();

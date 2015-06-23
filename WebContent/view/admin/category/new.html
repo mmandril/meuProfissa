@@ -1,0 +1,25 @@
+<md-dialog aria-label="{{'newTitle' | translate}} {{'categoryMenu' | translate}}">
+	<form>
+  		<md-toolbar>
+    		<div class="md-toolbar-tools">
+      			<h2>{{'newTitle' | translate}} {{'categoryMenu' | translate}}</h2>
+      			<span flex></span>
+      			<md-button class="md-icon-button" data-ng-click="close()">
+        			<ng-md-icon icon="close" style="line-height: 50px;fill: white;"></ng-md-icon>
+      			</md-button>
+    		</div>
+  		</md-toolbar>
+  		<md-dialog-content>
+    		<div>
+    		</div>
+  		</md-dialog-content>
+  		<div class="md-actions" layout="row">
+    		<md-button data-ng-click="close()" class="md-primary">
+     			{{'btnCancel' | translate}}
+    		</md-button>
+    		<md-button class="md-primary md-raised">
+      			{{'btnSave' | translate}}
+    		</md-button>
+  		</div>
+	</form>
+</md-dialog>
