@@ -10,14 +10,20 @@
     		</div>
   		</md-toolbar>
   		<md-dialog-content>
-    		<div>
-    		</div>
+  			<div>
+  				<p>
+		    		<md-input-container>
+		      			<label>{{'name' | translate}}</label>
+		      			<input name="name" data-ng-model="category.name">
+		   			</md-input-container>
+		   		</p>
+	   		</div>
   		</md-dialog-content>
   		<div class="md-actions" layout="row">
-    		<md-button data-ng-click="close()" class="md-primary">
+    		<md-button tye="button" data-ng-click="close()" class="md-primary">
      			{{'btnCancel' | translate}}
     		</md-button>
-    		<md-button class="md-primary md-raised">
+    		<md-button data-ng-click="save()" class="md-primary md-raised">
       			{{'btnSave' | translate}}
     		</md-button>
   		</div>

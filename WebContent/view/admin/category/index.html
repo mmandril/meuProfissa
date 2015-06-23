@@ -15,4 +15,28 @@
 			</form>
  		</div>
 	</div>
+	<br/>
+	<div layout="row" data-ng-show="categories.length">
+  		<div flex="60" offset="20" class="md-whiteframe-z5">
+			<md-data-table-toolbar>
+		  		<h2 class="md-title">Lista de Categorias</h2>
+			</md-data-table-toolbar>
+		
+			<md-data-table-container>
+			  <table md-data-table >
+			    <thead md-order="query.order" md-trim-column-names>
+			      <tr>
+			        <th order-by="name">{{'name' | translate}}</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+			      <tr ng-repeat="cat in categories">
+			        <td>{{cat.name}}</td>
+			      </tr>
+			    </tbody>
+			  </table>
+			</md-data-table-container>
+		</div>	
+	</div>
+	
 </md-content>

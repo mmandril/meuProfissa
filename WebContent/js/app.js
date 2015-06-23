@@ -5,7 +5,7 @@
 	angular.module('AdminCategoryModule', []);
 	
 
-    var app = angular.module('pto', ['CoreModule', 'CategoryModule', 'AdminModule', 'AdminCategoryModule', 'ui.router', 'ngMaterial', 'LocalStorageModule', 'pascalprecht.translate', 'ngMdIcons', 'highcharts-ng', 'ngAnimate']);
+    var app = angular.module('pto', ['CoreModule', 'CategoryModule', 'AdminModule', 'AdminCategoryModule', 'ui.router', 'ngMaterial', 'LocalStorageModule', 'pascalprecht.translate', 'ngMdIcons', 'highcharts-ng', 'ngAnimate', 'md.data.table']);
     
     app.run(function($rootScope, localStorageService){
     	$rootScope.menu = localStorageService.get('menu');
