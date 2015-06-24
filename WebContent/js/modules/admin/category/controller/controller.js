@@ -4,13 +4,13 @@
   angular.module('AdminCategoryModule').controller('AdminCategoryCtrl', AdminCategoryCtrl);
   
 
-  function AdminCategoryCtrl ($scope, $mdDialog, AdminCategoryService, $mdToast) {
+  function AdminCategoryCtrl ($scope, $mdDialog, AdminCategoryService, $mdToast, $rootScope) {
 	  
-	  $scope.categories = [];
+	  $rootScope.categories = [];
 	  
 	  AdminCategoryService.list()
 	  .success(function(data){
-		  $scope.categories = data;
+		  $rootScope.categories = data;
 	  })
 	  .error(function(err){
 		  displayToast('success', 'Ocorreu um erro!');
@@ -38,8 +38,7 @@
 		  AdminCategoryService.save($scope.category)
 		  .success(function(data){
 			  $scope.category = {};
-			  $scope.categories.push(data);
-			  $scope.$apply();
+			  $rootScope.categories.push(data);
 			  displayToast('success', 'Categoria cadastrada com sucesso!');
 		  })
 		  .error(function(err){
@@ -52,5 +51,5 @@
 	  };
   }
   
-  AdminCategoryCtrl.$inject = ['$scope', '$mdDialog', 'AdminCategoryService', '$mdToast'];
+  AdminCategoryCtrl.$inject = ['$scope', '$mdDialog', 'AdminCategoryService', '$mdToast', '$rootScope'];
 })();
