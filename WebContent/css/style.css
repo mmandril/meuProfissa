@@ -5,3 +5,8 @@
 .md-toast.success {
     background-color: green;
 }
+
+.no-text {
+	line-height: 50px;
+	fill: white;
+}

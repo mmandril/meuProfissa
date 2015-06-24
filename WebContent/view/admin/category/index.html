@@ -1,7 +1,7 @@
 <md-content layout-padding>
 	<div layout="row">
-  		<div flex="60" offset="20">
-  			<h1>{{'categoryMenu' | translate}} <md-button class="md-fab md-mini md-primary" data-ng-click="newCategory()"><ng-md-icon icon="add" style="line-height: 50px;fill: white;"></ng-md-icon></md-button></h1>  
+  		<div flex="80" offset="10">
+  			<h1>{{'categoryMenu' | translate}} <md-button class="md-fab md-mini md-primary" data-ng-click="newCategory()"><ng-md-icon icon="add" class="no-text"></ng-md-icon></md-button></h1>  
   			<md-divider></md-divider>
   			<br/>
 			<form name="projectForm" class="md-whiteframe-z5">
@@ -17,7 +17,7 @@
 	</div>
 	<br/>
 	<div layout="row" data-ng-show="categories.length">
-  		<div flex="60" offset="20" class="md-whiteframe-z5">
+  		<div flex="80" offset="10" class="md-whiteframe-z5">
 			<md-data-table-toolbar>
 		  		<h2 class="md-title">Lista de Categorias</h2>
 			</md-data-table-toolbar>
@@ -27,11 +27,15 @@
 			    <thead md-order="query.order" md-trim-column-names>
 			      <tr>
 			        <th order-by="name">{{'name' | translate}}</th>
+			        <th width="40px"></th>
 			      </tr>
 			    </thead>
 			    <tbody>
 			      <tr ng-repeat="cat in categories">
 			        <td>{{cat.name}}</td>
+			        <td>
+			        	<md-button class="md-fab md-mini md-primary" data-ng-href="" class="no-text"><ng-md-icon icon="list" class="no-text"></ng-md-icon></md-button>
+			        </td>
 			      </tr>
 			    </tbody>
 			  </table>
