@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 
-	angular.module('CoreModule')
+	angular.module('SiteModule')
 	.directive('header', function(){
 		return {
 			restrict: 'E',

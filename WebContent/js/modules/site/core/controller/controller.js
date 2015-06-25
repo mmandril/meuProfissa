@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('CoreModule').controller('CoreCtrl', CoreCtrl);
+  angular.module('SiteModule').controller('CoreCtrl', CoreCtrl);
   
 
   function CoreCtrl ($scope, $translate, CoreService, $mdToast, $animate, localStorageService, $state, $rootScope, $mdDialog) {

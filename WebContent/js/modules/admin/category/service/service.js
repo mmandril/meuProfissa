@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('AdminCategoryModule').service('AdminCategoryService', AdminCategoryService);
+  angular.module('AdminModule').service('AdminCategoryService', AdminCategoryService);
 
 
   function AdminCategoryService ($http) {
@@ -11,6 +11,10 @@
 	  
 	  this.list = function() {
 		return $http.get('http://localhost:9090/MeuProfissa/api/category/listAll');  
+	  };
+	  
+	  this.get = function(categoryId) {
+		return $http.get('http://localhost:9090/MeuProfissa/api/category/'+categoryId);  
 	  };
   };    
 

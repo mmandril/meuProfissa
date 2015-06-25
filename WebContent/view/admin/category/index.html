@@ -34,7 +34,12 @@
 			      <tr ng-repeat="cat in categories">
 			        <td>{{cat.name}}</td>
 			        <td>
-			        	<md-button class="md-fab md-mini md-primary" data-ng-href="" class="no-text"><ng-md-icon icon="list" class="no-text"></ng-md-icon></md-button>
+			        	<md-button class="md-icon-button" data-ng-href="#/admin/subCategory/{{cat.id}}">
+			        		<md-tooltip md-direction="top">
+				          		{{'subCategoryMenu' | translate}}
+					        </md-tooltip>
+			        		<ng-md-icon icon="list" style="fill: black;"></ng-md-icon>
+			        	</md-button>
 			        </td>
 			      </tr>
 			    </tbody>

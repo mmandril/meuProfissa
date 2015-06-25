@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('CategoryModule').controller('CategoryCtrl', CategoryCtrl);
+  angular.module('SiteModule').controller('CategoryCtrl', CategoryCtrl);
 
 
   function CategoryCtrl ($scope, $filter, CategoriaService, localStorageService) {

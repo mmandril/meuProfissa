@@ -1,11 +1,9 @@
 (function(){
-	angular.module('CoreModule', []);
-	angular.module('CategoryModule', []);
+	angular.module('SiteModule', []);
 	angular.module('AdminModule', []);
-	angular.module('AdminCategoryModule', []);
 	
 
-    var app = angular.module('pto', ['CoreModule', 'CategoryModule', 'AdminModule', 'AdminCategoryModule', 'ui.router', 'ngMaterial', 'LocalStorageModule', 'pascalprecht.translate', 'ngMdIcons', 'highcharts-ng', 'ngAnimate', 'md.data.table']);
+    var app = angular.module('pto', ['SiteModule', 'AdminModule', 'ui.router', 'ngMaterial', 'LocalStorageModule', 'pascalprecht.translate', 'ngMdIcons', 'highcharts-ng', 'ngAnimate', 'md.data.table']);
     
     app.run(function($rootScope, localStorageService){
     	$rootScope.menu = localStorageService.get('menu');
@@ -54,6 +52,12 @@
         	templateUrl: 'view/admin/category/index.html',
         	controller: 'AdminCategoryCtrl',
         	requireLogin: true
+        })
+        .state('adminSubCategory', {
+        	url: '/admin/subCategory/:categoryId',
+        	templateUrl: 'view/admin/subCategory/index.html',
+        	controller: 'AdminSubCategoryCtrl',
+        	requireLogin: true
         });
     	
     	
@@ -68,7 +72,7 @@
     		'homeMenu': 'Início',
     		'categoryMenu': 'Categoria',
     		'partnerMenu': 'Parceiro',
-    		'categoriaMenu': 'Categoria',
+    		'subCategoryMenu': 'SubCategoria',
     		'login': 'Entrar',
     		'cadastro': 'Cadastro',
     		'temCadastro': 'Já possuo um conta!',

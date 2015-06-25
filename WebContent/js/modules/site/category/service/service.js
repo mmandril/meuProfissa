@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('CategoryModule').service('CategoryService', CategoryService);
+  angular.module('SiteModule').service('CategoryService', CategoryService);
 
 
   function CategoryService ($http) {

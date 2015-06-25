@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('CoreModule').service('CoreService', CoreService);
+  angular.module('SiteModule').service('CoreService', CoreService);
 
 
   function CoreService ($http) {

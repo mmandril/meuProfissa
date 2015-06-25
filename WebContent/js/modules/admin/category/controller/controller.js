@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  angular.module('AdminCategoryModule').controller('AdminCategoryCtrl', AdminCategoryCtrl);
+  angular.module('AdminModule').controller('AdminCategoryCtrl', AdminCategoryCtrl);
   
 
   function AdminCategoryCtrl ($scope, $mdDialog, AdminCategoryService, $mdToast, $rootScope) {
